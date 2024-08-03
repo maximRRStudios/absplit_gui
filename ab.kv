@@ -1,0 +1,77 @@
+
+
+<ABAccordion>:
+    canvas.before:
+        Color:
+            rgba: 83 / 255.0, 82 / 255.0, 86 / 255.0, 1
+        Rectangle:
+            # self here refers to the widget i.e FloatLayout
+            pos: self.pos
+            size: self.size
+
+
+<ABRegistry>:
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            # self here refers to the widget i.e FloatLayout
+            pos: self.pos
+            size: self.size
+
+
+<MainContainer>:
+    ABAccordion:
+        orientation: 'vertical'
+        size_hint: 0.2, 1
+
+        Label:
+            id: 'logo'
+            text: 'AB Split'
+            pos_hint: {'top': 1}
+            size_hint: 1, 0.1
+        
+        Button:
+            text: 'Реестр'
+            size_hint: 1, 0.1
+
+        Button:
+            text: 'Результаты'
+            size_hint: 1, 0.1
+        
+        BoxLayout:
+            orientation: 'vertical'
+
+
+    ABRegistry:
+        id: 'registryLayout'
+        orientation: 'vertical'
+
+        Label:
+            id: 'registryLabel'
+            text: 'Рестр'
+            color: 1,0,1,1
+            pos_hint: {'top': 1}
+            size_hint: 1, 0.1
+
+        BoxLayout:
+            id: 'registryPanel'
+            size_hint: 1, 0.1
+
+            Button:
+                id: 'createBtn'
+                text: 'Создать'
+
+            MDTextField:
+                hint_text: "Test name"
+                mode: "round"
+                icon_right: "magnify"  
+                fill_color: 0, 0, 0, .4
+
+            Button:
+                id: 'filterBtn'
+                text: 'Фильтр'
+
+        BoxLayout:
+            id: 'tmp'
+            orientation: 'vertical'
